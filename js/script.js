@@ -1,34 +1,3 @@
-// document.addEventListener('DOMContentLoaded',init)
-//
-// function init(){
-//
-//   var topScoreRecord = document.querySelector('.score')
-//   var currentScore = document.querySelector('.currentscore')
-//   var timer = document.querySelector('.countdown')
-//   var jack = document.querySelector('.jack')
-//
-//   document.addEventListener('keyup', onKeyUp)
-//   function onKeyUp (event) {
-//     if (checkKeyCode(event.keyCode)) {
-//       if (event.keyCode === 37) {
-//         moveLeft()
-//       }
-//       if (event.keyCode === 39) {
-//         moveRight()
-//       }
-//       if (event.keyCode === 32) {
-//         restart()
-//       }
-//     }
-//   }
-//
-//   function checkKeyCode (keycode) {
-//     if (keycode === 37 || keycode === 39 || keycode === 32) {
-//       return true
-//     }
-//     return false
-//   }
-// }
 
 document.addEventListener('DOMContentLoaded', init)
 
@@ -92,9 +61,12 @@ function init () {
 // var rightBranchTop = parseInt(rightBranch.style.top)
 
   var rightBranch = document.createElement('div')
-  rightBranch.classList.add('right-branch')
+  rightBranch.style.top = '140px'
+  rightBranch.style.left = '17px'
   var leftBranch = document.createElement('div')
   leftBranch.classList.add('left-branch')
+  leftBranch.style.top = '140px'
+  leftBranch.style.left = '17px'
   function createBranch () {
     var number = randomFn(1, 2)
     if (number === 1) {
@@ -109,7 +81,10 @@ function init () {
     //   document.addEventListener('keyup', hideLeftBranch)
     // }
     }
-    moveDown()
+
+    console.log(leftBranch, rightBranch)
+    console.log(leftBranch.style.top, rightBranch.style.top)
+    // moveDown()
   }
   function hideRightBranch () {
     rightBranch.style.visibility = 'hidden'
